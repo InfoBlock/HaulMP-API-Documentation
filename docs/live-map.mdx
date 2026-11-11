@@ -1,0 +1,65 @@
+---
+id: live-map
+title: Live map
+sidebar_position: 2
+---
+
+import Endpoint from '@site/src/components/Endpoint';
+
+# Live map
+
+**Base URL:** `https://map.haulmp.com`
+**Authentication:** none
+
+## Live players and events
+
+<Endpoint method="GET" base="https://map.haulmp.com" path="/api/live" />
+
+Returns the positions of all online players and the active road events.
+
+```bash
+curl https://map.haulmp.com/api/live
+```
+
+## Places
+
+<Endpoint method="GET" base="https://map.haulmp.com" path="/places.json?v=" />
+
+Returns the cities and places with their coordinates.
+
+| Query | Description |
+| --- | --- |
+| `v` | A version value. Its purpose isn't described in the source; it is likely a cache-busting token *(inferred)*. |
+
+```bash
+curl "https://map.haulmp.com/places.json"
+```
+
+## Road vector tiles
+
+<Endpoint method="GET" base="https://map.haulmp.com" path="/tiles/{z}/{x}/{y}.pbf?v=" />
+
+Returns road vector tiles in `.pbf` format.
+
+| Parameter | In | Description |
+| --- | --- | --- |
+| `z` | path | Zoom level *(inferred from the standard tile scheme)* |
+| `x` | path | Tile column *(inferred)* |
+| `y` | path | Tile row *(inferred)* |
+| `v` | query | Version value, as for [Places](#places) |
+
+```bash
+curl -o tile.pbf "https://map.haulmp.com/tiles/5/16/10.pbf"
+```
+
+## Water layer
+
+<Endpoint method="GET" base="https://map.haulmp.com" path="/water.geojson" />
+
+Returns the water layer as GeoJSON.
+
+## Country borders
+
+<Endpoint method="GET" base="https://map.haulmp.com" path="/countries.geojson" />
+
+Returns the country borders as GeoJSON.

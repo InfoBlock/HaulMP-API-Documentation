@@ -1,0 +1,73 @@
+---
+id: company-platform
+title: Company platform
+sidebar_position: 4
+---
+
+import Endpoint from '@site/src/components/Endpoint';
+
+# Company platform (public)
+
+**Base URL:** `https://vtc.haulmp.com/api`
+**Authentication:** none, for the `/public/*` endpoints below
+
+Everything else on this API requires sign-in and is not documented here. On this platform, `{c}` denotes a **company id**.
+
+## Company directory
+
+<Endpoint method="GET" base="https://vtc.haulmp.com/api" path="/public/directory?page=" />
+
+Returns a paged company directory.
+
+| Query | Description |
+| --- | --- |
+| `page` | Page number |
+
+```bash
+curl "https://vtc.haulmp.com/api/public/directory?page=1"
+```
+
+## Company list
+
+<Endpoint method="GET" base="https://vtc.haulmp.com/api" path="/public/vtcs?offset=" />
+
+Returns the company list, 25 per page.
+
+| Query | Description |
+| --- | --- |
+| `offset` | Number of companies to skip. Pages are 25 companies long. |
+
+```bash
+curl "https://vtc.haulmp.com/api/public/vtcs?offset=0"
+```
+
+## Company with members and roles
+
+<Endpoint method="GET" base="https://vtc.haulmp.com/api" path="/public/vtcs/{slug}" />
+
+Returns one company with its members and roles.
+
+| Parameter | In | Description |
+| --- | --- | --- |
+| `slug` | path | The company's slug |
+
+## Company profile
+
+<Endpoint method="GET" base="https://vtc.haulmp.com/api" path="/public/company/{slug}" />
+
+Returns the data for a company's profile page.
+
+| Parameter | In | Description |
+| --- | --- | --- |
+| `slug` | path | The company's slug |
+
+## Company images
+
+<Endpoint method="GET" base="https://vtc.haulmp.com/api" path="/public/media/{c}/logo" />
+<Endpoint method="GET" base="https://vtc.haulmp.com/api" path="/public/media/{c}/banner" />
+
+Returns a company's logo or banner image.
+
+| Parameter | In | Description |
+| --- | --- | --- |
+| `c` | path | Company id |

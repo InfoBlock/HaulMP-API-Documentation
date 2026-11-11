@@ -1,0 +1,41 @@
+---
+id: main-site
+title: Main site
+sidebar_position: 1
+---
+
+import Endpoint from '@site/src/components/Endpoint';
+
+# Main site
+
+**Base URL:** `https://haulmp.com/api`
+**Authentication:** none
+
+## Server status
+
+<Endpoint method="GET" base="https://haulmp.com/api" path="/status" />
+
+Returns the current server state, including:
+
+- server state
+- player count and capacity
+- a sample of online drivers
+- the latest client build
+
+```bash
+curl https://haulmp.com/api/status
+```
+
+## Featured companies
+
+<Endpoint method="GET" base="https://haulmp.com/api" path="/companies" />
+
+Returns the featured companies shown on the home page.
+
+```bash
+curl https://haulmp.com/api/companies
+```
+
+:::tip
+For the full company list, use the [company platform's public directory](./company-platform.mdx#company-directory).
+:::

@@ -1,0 +1,23 @@
+---
+id: forum
+title: Forum
+sidebar_position: 5
+---
+
+import Endpoint from '@site/src/components/Endpoint';
+
+# Forum (public)
+
+**Base URL:** `https://forum.haulmp.com/api/forum`
+
+Only the categories endpoint is public. All other forum endpoints require sign-in and are not documented here.
+
+## Categories
+
+<Endpoint method="GET" base="https://forum.haulmp.com/api/forum" path="/categories" />
+
+Returns the forum's sections and forums.
+
+```bash
+curl https://forum.haulmp.com/api/forum/categories
+```

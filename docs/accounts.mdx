@@ -1,0 +1,93 @@
+---
+id: accounts
+title: Accounts
+sidebar_position: 3
+---
+
+import Endpoint from '@site/src/components/Endpoint';
+
+# Accounts
+
+**Base URL:** `https://accounts.haulmp.com/api`
+
+This page covers only the endpoints that start, continue or complete a sign-in or password-reset flow. Endpoints that require an existing session are not documented. See the [note on the introduction page](./intro.md#whats-covered).
+
+:::info
+Request bodies for the `POST` endpoints aren't specified in the source inventory, so they aren't documented here.
+:::
+
+## Sign in with Steam or Discord
+
+These two endpoints are served **without** the `/api` prefix.
+
+### Start Steam sign-in
+
+<Endpoint method="GET" base="https://accounts.haulmp.com" path="/auth/steam" />
+
+Starts the Steam sign-in flow.
+
+### Start Discord sign-in
+
+<Endpoint method="GET" base="https://accounts.haulmp.com" path="/auth/discord" />
+
+Starts the Discord sign-in flow.
+
+## Session
+
+### Get session
+
+<Endpoint method="GET" base="https://accounts.haulmp.com/api" path="/session" />
+
+Returns the current user, the available sign-in providers and a CSRF token.
+
+```bash
+curl https://accounts.haulmp.com/api/session
+```
+
+## OAuth completion
+
+### Get pending OAuth sign-in
+
+<Endpoint method="GET" base="https://accounts.haulmp.com/api" path="/auth/oauth/pending" />
+
+Returns the pending OAuth sign-in.
+
+### Complete OAuth sign-in
+
+<Endpoint method="POST" base="https://accounts.haulmp.com/api" path="/auth/oauth/complete" />
+
+Finishes an OAuth sign-in.
+
+## Device-code sign-in (launcher)
+
+### Start device sign-in
+
+<Endpoint method="POST" base="https://accounts.haulmp.com/api" path="/auth/device/start" />
+
+Starts a device-code sign-in, used by the launcher.
+
+### Poll a device code
+
+<Endpoint method="POST" base="https://accounts.haulmp.com/api" path="/auth/device/poll" />
+
+Polls the status of a device code.
+
+## Email and password
+
+### Verify email
+
+<Endpoint method="POST" base="https://accounts.haulmp.com/api" path="/auth/email/verify" />
+
+Verifies an email address.
+
+### Request password reset
+
+<Endpoint method="POST" base="https://accounts.haulmp.com/api" path="/auth/reset/request" />
+
+Requests a password reset.
+
+### Reset password
+
+<Endpoint method="POST" base="https://accounts.haulmp.com/api" path="/auth/reset" />
+
+Resets the password.

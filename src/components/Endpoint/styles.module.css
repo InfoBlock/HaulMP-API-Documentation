@@ -1,0 +1,30 @@
+.endpoint {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0.9rem;
+  margin: 0.75rem 0 1rem;
+  border: 1px solid var(--ifm-toc-border-color);
+  border-radius: 8px;
+  background: var(--ifm-code-background);
+  overflow-x: auto;
+}
+.method {
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  padding: 0.2rem 0.55rem;
+  border-radius: 5px;
+  flex-shrink: 0;
+}
+.path {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+.base {
+  opacity: 0.55;
+}
