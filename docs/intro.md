@@ -19,7 +19,6 @@ These endpoints were identified from the scripts the HaulMP sites load (inventor
 | --- | --- | --- |
 | [Main site](./main-site.mdx) | `https://haulmp.com/api` | 2 |
 | [Live map](./live-map.mdx) | `https://map.haulmp.com` | 5 |
-| [Accounts](./accounts.mdx) | `https://accounts.haulmp.com/api` | 10 |
 | [Company platform](./company-platform.mdx) | `https://vtc.haulmp.com/api` | 5 (`/public/*`) |
 | [Forum](./forum.mdx) | `https://forum.haulmp.com/api/forum` | 1 |
 
