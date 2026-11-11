@@ -30,7 +30,3 @@ These endpoints were identified from the scripts the HaulMP sites load (inventor
 ## What this documentation does not contain
 
 The source inventory lists each endpoint's method, path and a one-line purpose. It does **not** include request bodies or response schemas, so those are not documented here rather than guessed. Where a detail is inferred, it is marked as such.
-
-:::note Accounts: sign-in flow endpoints
-The Accounts API is listed as "mostly" requiring sign-in, without saying which endpoints don't. This documentation includes the endpoints that *start or complete* a sign-in or password-reset flow, since they have to work for signed-out users. Endpoints that act on an existing session (logout, account settings, device approval, etc.) are excluded. If you know better, adjust [Accounts](./accounts.mdx).
-:::
