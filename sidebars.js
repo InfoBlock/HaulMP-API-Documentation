@@ -7,7 +7,7 @@ const sidebars = {
       type: 'category',
       label: 'API Reference',
       collapsed: false,
-      items: ['main-site', 'live-map', 'accounts', 'company-platform', 'forum'],
+      items: ['main-site', 'live-map', 'company-platform', 'forum'],
     },
   ],
 };
