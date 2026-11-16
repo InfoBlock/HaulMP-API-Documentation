@@ -10,7 +10,7 @@ import Endpoint from '@site/src/components/Endpoint';
 
 **Base URL:** `https://forum.haulmp.com/api/forum`
 
-Only the categories endpoint is public. All other forum endpoints require sign-in and are not documented here.
+Only a few endpoints are public. All other forum endpoints require sign-in and are not documented here.
 
 ## Categories
 
@@ -20,4 +20,107 @@ Returns the forum's sections and forums.
 
 ```bash
 curl https://forum.haulmp.com/api/forum/categories
+```
+
+## Child-Categories & Threads
+
+<Endpoint method="GET" base="https://forum.haulmp.com/api/forum" path="/c/{slug}?page=&sort=" />
+
+Returns all Children and Threads of an Forum Category.
+
+| Parameter | In | Description |
+| --- | --- | --- |
+| `slug` | path | The thread's slug |
+
+```bash
+curl https://forum.haulmp.com/api/forum/c/{slug}?page=&sort=
+```
+
+## Search & Activity
+
+<Endpoint method="GET" base="https://forum.haulmp.com/api/forum" path="/search?q=" />
+
+Search for an certain text within the entire forum
+
+```bash
+curl https://forum.haulmp.com/api/forum/search?q=
+```
+
+<Endpoint method="GET" base="https://forum.haulmp.com/api/forum" path="/activity?page=" />
+
+See the recent activity on the forums
+
+```bash
+curl https://forum.haulmp.com/api/forum/activity?page=
+```
+
+## Member Profile
+
+<Endpoint method="GET" base="https://forum.haulmp.com/api/forum" path="/u/{handle}" />
+
+Get the profile of an member
+
+| Parameter | In | Description |
+| --- | --- | --- |
+| `handle` | path | Member's username |
+
+```bash
+curl https://forum.haulmp.com/api/forum/u/{handle}
+```
+
+## Member List
+
+<Endpoint method="GET" base="https://forum.haulmp.com/api/forum" path="/members?page=&sort=" />
+
+Get an list of the current members (posts, reputation)
+
+```bash
+curl https://forum.haulmp.com/api/forum/members?page=&sort=
+```
+
+## Online List
+
+<Endpoint method="GET" base="https://forum.haulmp.com/api/forum" path="/online" />
+
+See who is currently online
+
+```bash
+curl https://forum.haulmp.com/api/forum/online
+```
+
+## Staff Team
+
+<Endpoint method="GET" base="https://forum.haulmp.com/api/forum" path="/team" />
+
+Get a list of the current Staff Team
+
+```bash
+curl https://forum.haulmp.com/api/forum/team
+```
+
+## Patreon Supporters
+<Endpoint method="GET" base="https://forum.haulmp.com/api/forum" path="/supporters" />
+
+Get a list of the current Patreon Supporters
+
+```bash
+curl https://forum.haulmp.com/api/forum/supporters
+```
+
+## Leaderboard
+<Endpoint method="GET" base="https://forum.haulmp.com/api/forum" path="/leaderboard?time=" />
+
+Returns the all-time Forum Leaderboard
+
+```bash
+curl https://forum.haulmp.com/api/forum/leaderboard?time=
+```
+
+## Forum Roles
+<Endpoint method="GET" base="https://forum.haulmp.com/api/forum" path="/roles" />
+
+Returns all the Forum Roles
+
+```bash
+curl https://forum.haulmp.com/api/forum/roles
 ```
