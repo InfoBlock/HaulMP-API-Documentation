@@ -18,10 +18,6 @@ Only a few endpoints are public. All other forum endpoints require sign-in and a
 
 Returns the forum's sections and forums.
 
-```bash
-curl https://forum.haulmp.com/api/forum/categories
-```
-
 ## Child-Categories & Threads
 
 <Endpoint method="GET" base="https://forum.haulmp.com/api/forum" path="/c/{slug}?page=&sort=" />
@@ -31,9 +27,11 @@ Returns all Children and Threads of an Forum Category.
 | Parameter | In | Description |
 | --- | --- | --- |
 | `slug` | path | The thread's slug |
+| `page` | path | Page number |
+| `sort` | path | Sort results |
 
 ```bash
-curl https://forum.haulmp.com/api/forum/c/{slug}?page=&sort=
+curl https://forum.haulmp.com/api/forum/c/{slug}?page=0&sort=
 ```
 
 ## Search & Activity
@@ -41,6 +39,10 @@ curl https://forum.haulmp.com/api/forum/c/{slug}?page=&sort=
 <Endpoint method="GET" base="https://forum.haulmp.com/api/forum" path="/search?q=" />
 
 Search for an certain text within the entire forum
+
+| Parameter | In | Description
+| --- | --- | --- |
+| `q` | path | Search query |
 
 ```bash
 curl https://forum.haulmp.com/api/forum/search?q=
@@ -50,8 +52,12 @@ curl https://forum.haulmp.com/api/forum/search?q=
 
 See the recent activity on the forums
 
+| Parameter | In | Description
+| --- | --- | --- |
+| `page` | path | Page number |
+
 ```bash
-curl https://forum.haulmp.com/api/forum/activity?page=
+curl https://forum.haulmp.com/api/forum/activity?page=0
 ```
 
 ## Member Profile
@@ -74,8 +80,13 @@ curl https://forum.haulmp.com/api/forum/u/{handle}
 
 Get an list of the current members (posts, reputation)
 
+| Parameter | In | Description
+| --- | --- | --- |
+| `page` | path | Page number |
+| `sort` | path | Sort results |
+
 ```bash
-curl https://forum.haulmp.com/api/forum/members?page=&sort=
+curl https://forum.haulmp.com/api/forum/members?page=0&sort=
 ```
 
 ## Online List
@@ -84,28 +95,16 @@ curl https://forum.haulmp.com/api/forum/members?page=&sort=
 
 See who is currently online
 
-```bash
-curl https://forum.haulmp.com/api/forum/online
-```
-
 ## Staff Team
 
 <Endpoint method="GET" base="https://forum.haulmp.com/api/forum" path="/team" />
 
 Get a list of the current Staff Team
 
-```bash
-curl https://forum.haulmp.com/api/forum/team
-```
-
 ## Patreon Supporters
 <Endpoint method="GET" base="https://forum.haulmp.com/api/forum" path="/supporters" />
 
 Get a list of the current Patreon Supporters
-
-```bash
-curl https://forum.haulmp.com/api/forum/supporters
-```
 
 ## Leaderboard
 <Endpoint method="GET" base="https://forum.haulmp.com/api/forum" path="/leaderboard?time=" />
@@ -116,11 +115,11 @@ Returns the all-time Forum Leaderboard
 curl https://forum.haulmp.com/api/forum/leaderboard?time=
 ```
 
+| Parameter | In | Description
+| --- | --- | --- |
+| `time` | path | Time period |
+
 ## Forum Roles
 <Endpoint method="GET" base="https://forum.haulmp.com/api/forum" path="/roles" />
 
 Returns all the Forum Roles
-
-```bash
-curl https://forum.haulmp.com/api/forum/roles
-```

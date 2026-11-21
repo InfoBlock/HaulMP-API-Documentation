@@ -71,3 +71,40 @@ Returns a company's logo or banner image.
 | Parameter | In | Description |
 | --- | --- | --- |
 | `c` | path | Company id |
+
+## Driver jobs
+
+<Endpoint method="GET" base="https://vtc.haulmp.com/api" path="/quick-jobs" />
+
+Returns a quick jobs list
+
+<Endpoint method="GET" base="https://vtc.haulmp.com/api" path="/quick-jobs/cities" />
+
+Returns Cities for quick jobs
+
+<Endpoint method="GET" base="https://vtc.haulmp.com/api" path="/quick-jobs/dlc" />
+
+Returns DLC map coverage
+
+<Endpoint method="GET" base="https://vtc.haulmp.com/api" path="/catalogue/ets2" />
+
+Returns the ETS2 cargo and city catalogue
+
+<Endpoint method="GET" base="https://vtc.haulmp.com/api" path="/catalogue/ets2/freight?from=&cargo=" />
+
+Returns Freight options from a city
+
+| Query | Description |
+| --- | --- |
+| `from` | Declares the city |
+| `cargo` | Declares the cargo |
+
+```bash
+curl "https://vtc.haulmp.com/api/catalogue/ets2/freight?from=&cargo="
+```
+
+## Truck skins
+
+<Endpoint method="GET" base="https://vtc.haulmp.com/api" path="/skins" />
+
+Browse available skins
