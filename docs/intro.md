@@ -19,7 +19,7 @@ These endpoints were identified from the scripts the HaulMP sites load (inventor
 | --- | --- | --- |
 | [Main site](./main-site.mdx) | `https://haulmp.com/api` | 2 |
 | [Live map](./live-map.mdx) | `https://map.haulmp.com` | 5 |
-| [Company platform](./company-platform.mdx) | `https://vtc.haulmp.com/api` | 5 (`/public/*`) |
+| [Company platform](./company-platform.mdx) | `https://vtc.haulmp.com/api` | 7 |
 | [Forum](./forum.mdx) | `https://forum.haulmp.com/api/forum` | 10 |
 
 ## What's intentionally left out
