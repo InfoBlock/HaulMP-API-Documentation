@@ -3,7 +3,7 @@ const { themes } = require('prism-react-renderer');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'HaulMP API',
+  title: 'HaulMP API Documentation',
   tagline: 'Reference for the public HaulMP endpoints',
   url: 'https://infoblock.github.io',
   baseUrl: '/HaulMP-API-Documentation/',
@@ -11,7 +11,7 @@ const config = {
   projectName: 'HaulMP-API-Documentation',
   onBrokenLinks: 'throw',
   markdown: { hooks: { onBrokenMarkdownLinks: 'warn' } },
-  favicon: 'img/favicon.svg',
+  favicon: 'img/Logo.png',
 
   i18n: { defaultLocale: 'en', locales: ['en'] },
 
@@ -29,10 +29,10 @@ const config = {
   themeConfig: {
     colorMode: { respectPrefersColorScheme: true },
     navbar: {
-      title: 'HaulMP API',
+      title: 'HaulMP API Documentation',
       items: [
         { to: '/', label: 'Docs', position: 'left' },
-        { href: 'https://haulmp.com', label: 'haulmp.com', position: 'right' },
+        { href: 'https://haulmp.com', label: 'HaulMP', position: 'right' },
       ],
     },
     footer: {
